@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.android.tap2unlock.MainActivity" >
+
+    <ToggleButton
+        android:id="@+id/t2uswitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="28dp"
+        android:text="ToggleButton"
+        android:onClick="onToggleClicked" />
+
+    <TextView
+        android:id="@+id/Tap2unlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/t2uswitch"
+        android:layout_alignBottom="@+id/t2uswitch"
+        android:layout_marginRight="47dp"
+        android:layout_toLeftOf="@+id/t2uswitch"
+        android:text="Tap2Unlock"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Tap2unlock"
+        android:layout_alignRight="@+id/t2uswitch"
+        android:layout_below="@+id/t2uswitch"
+        android:layout_marginTop="56dp"
+        android:text="Change pattern"
+        android:onClick="onPatternchange" />
+
+</RelativeLayout>

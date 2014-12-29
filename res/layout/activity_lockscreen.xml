@@ -1,0 +1,82 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:columnCount="1"
+    android:id="@+id/bg"
+    tools:context=".MainActivity" >
+    
+    
+	
+    <LinearLayout 
+        android:id="@+id/pattern"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <TextView
+        android:id="@+id/patternView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:hint=" Tap to Unlock " />
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="316dp"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:hint="1" />
+        
+       
+        
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="316dp"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:hint="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="fill_parent"
+            android:layout_height="316dp"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:hint="3" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="fill_parent"
+            android:layout_height="316dp"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:hint="4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_column="0"
+        android:layout_gravity="left|top"
+        android:layout_row="0"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</GridLayout>
