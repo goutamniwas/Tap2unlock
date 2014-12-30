@@ -27,7 +27,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.widget.Toast;
 
 import com.stericson.RootTools.RootTools;
 import com.stericson.RootTools.exceptions.RootDeniedException;
@@ -88,6 +87,7 @@ public class PhoneStateMonitor extends PhoneStateListener  {
 		{
 		case TelephonyManager.CALL_STATE_IDLE:    //Phone is in Idle State
 			if(cha == 0 && in_call == true) {
+				in_call = false;
 				CommandCapture command1 = new CommandCapture(0, "chmod 777 /sys/android_touch/t2u_allow","echo "+builder+"0"+" > /sys/android_touch/t2u_allow");
 				try {
 					RootTools.getShell(true).add(command1);
@@ -119,7 +119,7 @@ public class PhoneStateMonitor extends PhoneStateListener  {
 					e.printStackTrace();
 				}
 			}
-			in_call = false;
+			
 			break;
 		case TelephonyManager.CALL_STATE_RINGING:  //Phone is Ringing			
 				

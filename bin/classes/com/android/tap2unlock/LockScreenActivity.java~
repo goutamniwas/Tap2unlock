@@ -198,16 +198,16 @@ public class LockScreenActivity extends Activity implements OnClickListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-    	CommandCapture command = new CommandCapture (0,"chmod 777 /sys/android_touch/t2u_allow","echo "+builder1+"1"+" > /sys/android_touch/t2u_allow");
+    	CommandCapture command = new CommandCapture (0,"chmod 777 /sys/android_touch/t2u_allow","echo "+builder1+"1"+"/sys/android_touch/t2u_allow");
     	
 		RootTools.getShell(true).add(command);
 		
 		
-		//Toast.makeText(getApplicationContext(), "trying to enable touch sensor "+builder1.toString()+"1", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "trying to enable touch sensor "+builder1.toString()+"1", Toast.LENGTH_LONG).show();
     }
 	 catch (IOException | TimeoutException | RootDeniedException e2) {
 		// TODO Auto-generated catch block
-		// Toast.makeText(getApplicationContext(), "exception "+e2.toString(),Toast.LENGTH_LONG);
+		 Toast.makeText(getApplicationContext(), "exception "+e2.toString(),Toast.LENGTH_LONG);
 	} 
 
     	disableStatusbarExpand(STATUS_BAR_DISABLE_EXPAND);
@@ -217,7 +217,7 @@ public class LockScreenActivity extends Activity implements OnClickListener {
 			fis = new FileInputStream("sys/android_touch/t2u_allow");
 			int allow = fis.read() - '0';
 			fis.close();
-			if(allow == 1 || PhoneStateMonitor.in_call == true ) {
+			if(allow == 1) {
 				this.finish();
 				
 				disableStatusbarExpand(DISABLE_NONE);

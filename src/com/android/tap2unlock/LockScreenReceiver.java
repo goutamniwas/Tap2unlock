@@ -20,13 +20,12 @@
 package com.android.tap2unlock;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class LockScreenReceiver extends BroadcastReceiver {
 	static int swi,allow;
@@ -57,7 +56,9 @@ public class LockScreenReceiver extends BroadcastReceiver {
 				FileInputStream fis = new FileInputStream("sys/android_touch/t2u_allow");
 				allow = fis.read() - '0';
 				fis.close();
+				//Toast.makeText(context, "received"+swi+"  "+allow, Toast.LENGTH_SHORT).show();
 				if(swi == 1 && allow == 0){
+					
 					
 			         context.startActivity(i);					
 				}
@@ -76,5 +77,6 @@ public class LockScreenReceiver extends BroadcastReceiver {
 			
            
         }
+        
     }
 }
